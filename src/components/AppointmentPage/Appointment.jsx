@@ -34,7 +34,7 @@ const AppointmentPage = () => {
   };
   const makePayment = async () => {
     const { data } = await axios.post(
-      "http://localhost:5000/api/payment/create-order",
+      "https://pa-backend-wprc.onrender.com/api/payment/create-order",
       {
         amount: 500, // INR
       }

@@ -80,7 +80,7 @@ export default function AssistantRegistrationHandler() {
     setIsLoadingAction(true);
     try {
       // Make API call to approve the assistant
-      await axios.put(`http://localhost:5000/admin/verify-assistant/${id}`, {
+      await axios.put(`https://pa-backend-wprc.onrender.com/admin/verify-assistant/${id}`, {
         isVerified: true,
       });
 
@@ -119,7 +119,7 @@ export default function AssistantRegistrationHandler() {
     setIsLoadingAction(true);
     try {
       // You'll need to implement this endpoint on your backend
-      await axios.put(`http://localhost:5000/admin/reject-assistant/${id}`);
+      await axios.put(`https://pa-backend-wprc.onrender.com/admin/reject-assistant/${id}`);
 
       // Update local state
       setRegistrationRequests((requests) =>
@@ -138,7 +138,7 @@ export default function AssistantRegistrationHandler() {
   const getPending = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/admin/pending-assistants"
+        "https://pa-backend-wprc.onrender.com/admin/pending-assistants"
       );
       console.log("API Response:", res.data);
       const formattedData = formatRequestData(res.data);
